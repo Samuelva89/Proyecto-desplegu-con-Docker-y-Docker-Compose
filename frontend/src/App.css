@@ -1,0 +1,89 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: #1a1a1a;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.task-item {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #535bf2;
+  text-align: left;
+}
+
+.task-item.open {
+  border-color: #646cff;
+}
+
+.task-item.in_progress {
+  border-color: #ffc107;
+}
+
+.task-item.done {
+  border-color: #28a745;
+  text-decoration: line-through;
+}
+
+.task-item h3 {
+  margin-top: 0;
+}
+
+.task-item div {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
