@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { TaskStatus } from './Task';
-import type { Task } from './Task';
-import TaskList from './components/TaskList';
-import AddTask from './components/AddTask';
-import { getTasks, createTask, updateTaskStatus, deleteTask } from './services/api';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { TaskStatus } from "./Task";
+import type { Task } from "./Task";
+import TaskList from "./components/TaskList";
+import AddTask from "./components/AddTask";
+import {
+  getTasks,
+  createTask,
+  updateTaskStatus,
+  deleteTask,
+} from "./services/api";
+import "./App.css";
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);

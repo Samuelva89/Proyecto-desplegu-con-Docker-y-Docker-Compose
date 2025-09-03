@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000" # Mapea el puerto 3001 de tu máquina al 3000 del contenedor
+    environment:
+      # Estas variables sobrescribirán las del .env dentro del contenedor
+      DB_TYPE: mongodb
+      DB_HOST: mongodb # ¡Importante! Usa el nombre del servicio de la DB
+      DB_PORT: 27017
+      DB_DATABASE: nest_todo_app
+      # DB_USERNAME: tu_usuario_db # Descomentar y configurar si tu DB lo requiere
+      # DB_PASSWORD: tu_password_db # Descomentar y configurar si tu DB lo requiere
+    depends_on:
+      - mongodb # Asegura que la DB se inicie antes que el backend
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80" # Mapea el puerto 8080 de tu máquina al 80 del contenedor (Nginx)
+    depends_on:
+      - backend # Asegura que el backend se inicie antes que el frontend
+
+  mongodb:
+    image: mongo:latest # Usa la imagen oficial de MongoDB
+    ports:
+      - "27017:27017" # Mapea el puerto 27017 de tu máquina al 27017 del contenedor
+    volumes:
+      - mongodb_data:/data/db # Persistencia de datos para MongoDB
+
+volumes:
+  mongodb_data: # Define el volumen para la persistencia de datos de MongoDB
