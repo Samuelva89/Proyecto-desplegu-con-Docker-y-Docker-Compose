@@ -13,6 +13,7 @@ services:
       DB_HOST: mongodb # ¡Importante! Usa el nombre del servicio de la DB
       DB_PORT: 27017
       DB_DATABASE: nest_todo_app
+      MONGODB_URI: mongodb://mongodb:27017/nest-todo-app # Añadido para que NestJS lo lea
       # DB_USERNAME: tu_usuario_db # Descomentar y configurar si tu DB lo requiere
       # DB_PASSWORD: tu_password_db # Descomentar y configurar si tu DB lo requiere
     depends_on:

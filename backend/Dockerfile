@@ -1,5 +1,5 @@
 # Usa una imagen base de Node.js con Alpine Linux.
-FROM node:20-alpine as builder
+FROM node:20-alpine as builder 
 
 # Establece el directorio de trabajo dentro del contenedor.
 WORKDIR /app
